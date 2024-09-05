@@ -26,11 +26,21 @@ const unicornRules = {
   "unicorn/prefer-node-protocol": "error"
 };
 
+/**
+ * General rules
+ */
+const generalRules = {
+  "curly": ["error"],
+  "brace-style": "error",
+  "dot-notation": "off",
+  "quote-props": [
+    "error",
+    "as-needed"
+  ],
+}
+
 /** General TypeScript rules */
 const tsRules = {
-  "jsdoc/require-returns": 0,
-  "jsdoc/tag-lines": ["error", "never", { "startLines": 1 }],
-  "jsdoc/no-blank-blocks": ["error", { "enableFixer": true }],
   "@typescript-eslint/no-parameter-properties": "off",
   "@typescript-eslint/no-explicit-any": "off",
   "@typescript-eslint/no-use-before-define": [
@@ -103,7 +113,6 @@ const tsRules = {
     }
   ],
   "@typescript-eslint/no-this-alias": "off",
-  "dot-notation": "off",
   "@typescript-eslint/dot-notation": [
     "error",
     {
@@ -112,12 +121,8 @@ const tsRules = {
     }
   ],
   "@typescript-eslint/no-unsafe-declaration-merging": "off",
-  "quote-props": [
-    "error",
-    "as-needed"
-  ],
   "@typescript-eslint/consistent-type-imports": "error",
-  "@typescript-eslint/consistent-type-exports": "error"
+  "@typescript-eslint/consistent-type-exports": "error",
 };
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
@@ -125,6 +130,7 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   jsdoc.configs["flat/recommended-typescript"],
+  eslintPluginPrettierRecommended,
   {
     languageOptions: {
       parserOptions: {
@@ -138,12 +144,10 @@ export default tseslint.config(
     rules: unicornRules
   },
   {
-    files: ["**/*.ts"],
     plugins: { jsdoc },
     rules: jsdocRules
   },
   {
-    rules: tsRules
+    rules: {...generalRules, ...tsRules }
   },
-  eslintPluginPrettierRecommended
 );

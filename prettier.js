@@ -10,7 +10,3 @@ module.exports = {
     arrowParens: 'avoid',
     quoteProps: 'as-needed',
 };
-
-function test() {
-    return 's'
-}
