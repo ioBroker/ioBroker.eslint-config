@@ -14,7 +14,7 @@
   },
   "files": [
     "eslint.config.mjs",
-    "prettier.js",
+    "prettier.config.mjs",
     "README.md"
   ],
   "peerDependencies": {
