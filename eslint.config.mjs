@@ -163,6 +163,9 @@ export default tseslint.config(
   },
 );
 
+/**
+ * Additional rules for ESM modules
+ */
 export const esmConfig = [{
   plugins: { unicorn: eslintPluginUnicorn },
   rules: unicornRules
