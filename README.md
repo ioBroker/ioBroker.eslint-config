@@ -11,15 +11,26 @@ npm i @iobroker/eslint-config --save-dev
 Just extend this project in your lint config in your `eslint.config.mjs`.
 
 ```js
-import config from '@iobroker/eslint-config'
+import config from '@iobroker/eslint-config';
 
-export default [...config]
+export default [...config];
 ```
 
-And create a `prettier.config.js` with the following content:
+And create a `prettier.config.mjs` with the following content:
 
 ```js
-module.exports = require('@iobroker/eslint-config/prettier');
+import prettierConfig  from '@iobroker/eslint-config/prettier.config.mjs';
+
+export default prettierConfig;
+```
+
+Optionally, if you are using ESM modules, there is an additional config. 
+Your `eslint.config.mjs` would then look like this:
+
+```js
+import config, { esmConfig } from '@iobroker/eslint-config';
+
+export default [...config, ...esmConfig];
 ```
 
 ## Changelog

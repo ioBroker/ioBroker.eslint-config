@@ -3,6 +3,7 @@ import eslint from "@eslint/js";
 import jsdoc from "eslint-plugin-jsdoc";
 import tseslint from "typescript-eslint";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import globals from 'globals'
 
 /**
  * Rules for all JSDOC plugin usages
@@ -27,7 +28,7 @@ const unicornRules = {
 };
 
 /**
- * General rules
+ * General rules, applied to all files
  */
 const generalRules = {
   "curly": ["error"],
@@ -37,12 +38,15 @@ const generalRules = {
     "error",
     "as-needed"
   ],
+  "@typescript-eslint/no-unsafe-assignment": "off",
+  "@typescript-eslint/no-unused-expressions": "off",
 }
 
 /** General TypeScript rules */
 const tsRules = {
   "@typescript-eslint/no-parameter-properties": "off",
   "@typescript-eslint/no-explicit-any": "off",
+  "@typescript-eslint/unbound-method": "off",
   "@typescript-eslint/no-use-before-define": [
     "error",
     {
@@ -100,8 +104,10 @@ const tsRules = {
       "allowExpressions": true
     }
   ],
+  "@typescript-eslint/no-floating-promises": "warn",
+  "@typescript-eslint/no-for-in-array": "warn",
+  "@typescript-eslint/no-unsafe-enum-comparison": "off",
   "@typescript-eslint/no-unsafe-argument": "off",
-  "@typescript-eslint/no-unsafe-assignment": "off",
   "@typescript-eslint/no-unsafe-member-access": "off",
   "@typescript-eslint/no-unsafe-return": "off",
   "@typescript-eslint/no-unsafe-call": "off",
@@ -133,21 +139,34 @@ export default tseslint.config(
   eslintPluginPrettierRecommended,
   {
     languageOptions: {
+      globals: globals.node,
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname
+        tsconfigRootDir: import.meta.dirname,
       }
     }
-  },
-  {
-    plugins: { unicorn: eslintPluginUnicorn },
-    rules: unicornRules
   },
   {
     plugins: { jsdoc },
     rules: jsdocRules
   },
   {
-    rules: {...generalRules, ...tsRules }
+    rules: generalRules
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    rules: tsRules
+  },
+  {
+    files: ['**/*.js'],
+    ...tseslint.configs.disableTypeChecked,
   },
 );
+
+/**
+ * Additional rules for ESM modules
+ */
+export const esmConfig = [{
+  plugins: { unicorn: eslintPluginUnicorn },
+  rules: unicornRules
+}]
