@@ -39,5 +39,5 @@ export default [...config, ...esmConfig];
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### 0.1.1 (2024-09-06)
+### **WORK IN PROGRESS**
 * (@foxriver76) initial release
