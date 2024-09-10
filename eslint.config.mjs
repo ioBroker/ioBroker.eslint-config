@@ -3,7 +3,7 @@ import eslint from "@eslint/js";
 import jsdoc from "eslint-plugin-jsdoc";
 import tseslint from "typescript-eslint";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
-import globals from 'globals'
+import globals from 'globals';
 
 /**
  * Rules for all JSDOC plugin usages
@@ -141,8 +141,7 @@ export default tseslint.config(
     languageOptions: {
       globals: globals.node,
       parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
+        projectService: true
       }
     }
   },
