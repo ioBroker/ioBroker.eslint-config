@@ -39,7 +39,7 @@ export default [...config, ...esmConfig];
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.1.4 (2024-09-11)
 * (@GermanBluefox) adjust initial `prettier` rules
 
 ### 0.1.3 (2024-09-10)
