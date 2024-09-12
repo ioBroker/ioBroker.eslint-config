@@ -53,8 +53,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.1.5 (2024-09-12)
 
 -   (@GermanBluefox) added ReactJS eslint config file
 
