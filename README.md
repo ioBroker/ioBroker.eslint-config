@@ -44,8 +44,6 @@ export default [...config, ...reactConfig];
 
 It is suggested to create separate `eslint.config.mjs` files for backend and for ReactJS.
 
-```js
-
 ## Changelog
 
 <!--
