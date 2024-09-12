@@ -34,8 +34,11 @@ import config, { esmConfig } from '@iobroker/eslint-config';
 
 export default [...config, ...esmConfig];
 ```
+
 ## ReactJS project
+
 To use this config in a ReactJS project, your `eslint.config.mjs` would then look like this:
+
 ```js
 import config, { reactConfig } from '@iobroker/eslint-config';
 
@@ -55,12 +58,12 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 
 ### 0.1.4 (2024-09-11)
 
-- (bluefox) added ReactJS eslint config file
+-   (bluefox) added ReactJS eslint config file
 
 ### 0.1.3 (2024-09-10)
 
-- (@foxriver76) fixed problems with tsconfig
+-   (@foxriver76) fixed problems with tsconfig
 
 ### 0.1.2 (2024-09-06)
 
-- (@foxriver76) initial release
+-   (@foxriver76) initial release
