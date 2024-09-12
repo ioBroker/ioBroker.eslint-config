@@ -56,9 +56,11 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 
 ### **WORK IN PROGRESS**
 
+-   (@GermanBluefox) added ReactJS eslint config file
+
 ### 0.1.4 (2024-09-11)
 
--   (bluefox) added ReactJS eslint config file
+-   (@GermanBluefox) adjust initial `prettier` rules
 
 ### 0.1.3 (2024-09-10)
 
