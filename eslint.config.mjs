@@ -39,6 +39,7 @@ const generalRules = {
     'brace-style': 'error',
     'dot-notation': 'off',
     'quote-props': ['error', 'as-needed'],
+    'no-else-return': 'error',
     // https://eslint.org/docs/latest/rules/prefer-template
     // Enforce the use of template literals instead of string concatenation: "Hello, " + name + "!" => `Hello, ${name}!`
     'prefer-template': 'error',

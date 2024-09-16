@@ -56,6 +56,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 ### **WORK IN PROGRESS**
 
 -   (@GermanBluefox) Enforce the use of template literals instead of string concatenation: "Hello, " + name + "!" => `Hello, ${name}!`
+-   (@GermanBluefox) Added `no-else-return` rule
 
 ### 0.1.5 (2024-09-12)
 
