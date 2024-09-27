@@ -51,7 +51,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 
 ## Hot to migrate from `.eslintrc.json` to `iobroker.eslint-config`
 
-Execute all previously described steps and then remove the `.eslintrc.json` file.
+Execute all previously described (required for your project) steps and then remove the `.eslintrc.json` file.
 
 You should modify or add the `lint` script in your `package.json`:
 
