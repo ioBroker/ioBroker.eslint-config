@@ -151,10 +151,6 @@ export default tseslint.config(
         },
     },
     {
-        plugins: { jsdoc },
-        rules: jsdocRules,
-    },
-    {
         rules: generalRules,
     },
     {
@@ -174,6 +170,13 @@ export const esmConfig = [
     {
         plugins: { unicorn: eslintPluginUnicorn },
         rules: unicornRules,
+    },
+];
+
+export const jsdocConfig = [
+    {
+        plugins: { jsdoc },
+        rules: jsdocRules,
     },
 ];
 
