@@ -31,68 +31,75 @@ The steps are valid for classic javascript and typescritp repositories. If you a
       .prettierignore
       .prettierrc.js
       
-- [ ] create new configuration for eslint
+- [ ] create new configuration file 'eslint.config.mjs' for eslint
 
-        //  
-        // ioBroker eslint template configuration file for js and ts files
-        // Please note that esm or react based modules need additional modules loaded.
-        //  
-        
-        import config from '@iobroker/eslint-config';
+      //  
+      // ioBroker eslint template configuration file for js and ts files
+      // Please note that esm or react based modules need additional modules loaded.
+      //  
       
-        export default [
-            ...config,
-        
-            {
-                // specify files to exclude from linting here
-                ignores: [
-                    '*.test.js', 
-                    'test/**/*.js', 
-                    '*.config.mjs', 
-                    'build', 
-                    'admin/build', 
-                    'admin/words.js'
-                ] 
-            },
-        
-            {
-                // you may disable some 'jsdoc' rules - but using jsdoc is highly recommended
-                // as this improves maintainability. jsdoc warnings will not block buiuld process.
-                rules: {
-                    // 'jsdoc/require-jsdoc': 'off',
-                    // 'jsdoc/require-param': 'off',
-                    // 'jsdoc/require-param-description': 'off',
-                    // 'jsdoc/require-returns-description': 'off',
-                },
-            },
-            
-        ];
+      import config from '@iobroker/eslint-config';
+    
+      export default [
+          ...config,
+      
+          {
+              // specify files to exclude from linting here
+              ignores: [
+                  '*.test.js', 
+                  'test/**/*.js', 
+                  '*.config.mjs', 
+                  'build', 
+                  'admin/build', 
+                  'admin/words.js'
+              ] 
+          },
+      
+          {
+              // you may disable some 'jsdoc' rules - but using jsdoc is highly recommended
+              // as this improves maintainability. jsdoc warnings will not block buiuld process.
+              rules: {
+                  // 'jsdoc/require-jsdoc': 'off',
+                  // 'jsdoc/require-param': 'off',
+                  // 'jsdoc/require-param-description': 'off',
+                  // 'jsdoc/require-returns-description': 'off',
+              },
+          },
+          
+      ];
   
-  - [ ] create new configuration for prettier
+- [ ] create new configuration file 'eslint.config.mjs' for prettier
 
-        //  
-        // iobroker prettier configuration file
-        //  
+      //  
+      // iobroker prettier configuration file
+      //  
 
-        import prettierConfig from '@iobroker/eslint-config/prettier.config.mjs';
-        
-        export default prettierConfig;
+      import prettierConfig from '@iobroker/eslint-config/prettier.config.mjs';
+      
+      export default prettierConfig;
+  
+- [ ] check and eventually adapt script definition at pacakge.json
+   
+  Your 'lint' script definitioon at io-package.json should read like this
 
-  - [ ] check and eventually adapt script definition at pacakge.json
-     
-    Your 'lint' script definitioon at io-package.json should read like this
+      {
+          "scripts": {
+              "lint": "eslint -c eslint.config.mjs ."
+          }
+      }
 
-        {
-            "scripts": {
-                "lint": "eslint -c eslint.config.mjs src"
-            }
-        }
+- [ ] update .npmignore (if still in use)
 
-  - [ ] check functionality by executing
-     
-        npm run lint
+  If you still use .npmignore and die not yet switch to use `files` section within opackage.json, add the follwoing files to `.npmignore`
 
-    Please note that the execution of eslint 9 checks will last longer than previous executions. You might get errors and warnings due to new rules.
-    Feel free to try `npm run lint -- --fix` to perform automatic fixes.
+      eslint.config.mjs
+      prettier.config.mjs
+          
+- [ ] check functionality by executing
+   
+      npm run lint
+
+  Please note that the execution of eslint 9 checks will last longer than previous executions. You might get errors and warnings due to new rules.
+  Feel free to try `npm run lint -- --fix` to perform automatic fixes.
 
 
