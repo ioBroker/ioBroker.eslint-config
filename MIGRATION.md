@@ -12,9 +12,9 @@ The steps are valid for classic javascript and typescritp repositories. If you a
       
 - [ ] remove packages no longer needed
 
-      `npm uninstall eslint-config-prettier`
-      `npm uninstall eslint-plugin-prettier`
-      `npm uninstall prettier`
+      npm uninstall eslint-config-prettier
+      npm uninstall eslint-plugin-prettier
+      npm uninstall prettier
 
 - [ ] update eslint to current version
 
@@ -28,7 +28,9 @@ The steps are valid for classic javascript and typescritp repositories. If you a
 
       .eslintignore
       .eslintrc.json
-
+      .prettierignore
+      .prettierrc.js
+      
 - [ ] create new configuration for eslint
 
         //  
