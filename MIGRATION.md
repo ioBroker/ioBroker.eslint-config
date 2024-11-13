@@ -73,10 +73,15 @@ The steps are valid for classic javascript and typescritp repositories. If you a
       //  
       // iobroker prettier configuration file
       //  
-
+      
       import prettierConfig from '@iobroker/eslint-config/prettier.config.mjs';
       
-      export default prettierConfig;
+      export default {
+          ...prettierConfig,
+      
+          // uncomment next line if you prefer double quotes
+          //singleQuote: false,
+      }
   
 - [ ] check and eventually adapt script definition at pacakge.json
    
