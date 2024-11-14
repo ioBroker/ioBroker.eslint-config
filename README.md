@@ -76,6 +76,10 @@ Where `src` is the folder with your source code.
 
 -   (@GermanBluefox) Made jsdoc rules optional
 
+### 0.1.7 (2024-11-13)
+
+-   (@foxriver76) Allow `require` imports for `.js` files
+
 ### 0.1.6 (2024-09-16)
 
 -   (@GermanBluefox) Enforce the use of template literals instead of string concatenation: "Hello, " + name + "!" => `Hello, ${name}!`

@@ -6,6 +6,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import globals from 'globals';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
+
 /**
  * Rules for all JSDOC plugin usages
  */
@@ -136,6 +137,10 @@ const tsRules = {
     '@typescript-eslint/consistent-type-exports': 'error',
 };
 
+/** Separate config for .js files which is applied internally */
+const plainJsConfig = tseslint.configs.disableTypeChecked
+plainJsConfig.rules['@typescript-eslint/no-require-imports'] = 'off';
+
 /** @type {import("eslint").Linter.FlatConfig[]} */
 export default tseslint.config(
     eslint.configs.recommended,
@@ -159,7 +164,7 @@ export default tseslint.config(
     },
     {
         files: ['**/*.js'],
-        ...tseslint.configs.disableTypeChecked,
+        ...plainJsConfig,
     },
 );
 
@@ -180,6 +185,9 @@ export const jsdocConfig = [
     },
 ];
 
+/**
+ * Config for React projects
+ */
 export const reactConfig = [
     {
         plugins: {
