@@ -51,18 +51,17 @@ The steps are valid for classic javascript and typescritp repositories. If you a
                   '*.config.mjs', 
                   'build', 
                   'admin/build', 
-                  'admin/words.js'
+                  'admin/words.js',
+                  'admin/admin.d.ts',
+                  '**/adapter-config.d.ts'     
               ] 
           },
       
           {
-              // you may disable some 'jsdoc' rules - but using jsdoc is highly recommended
+              // you may disable some 'jsdoc' warnings - but using jsdoc is highly recommended
               // as this improves maintainability. jsdoc warnings will not block buiuld process.
               rules: {
                   // 'jsdoc/require-jsdoc': 'off',
-                  // 'jsdoc/require-param': 'off',
-                  // 'jsdoc/require-param-description': 'off',
-                  // 'jsdoc/require-returns-description': 'off',
               },
           },
           
