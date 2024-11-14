@@ -44,6 +44,7 @@ const generalRules = {
     // https://eslint.org/docs/latest/rules/prefer-template
     // Enforce the use of template literals instead of string concatenation: "Hello, " + name + "!" => `Hello, ${name}!`
     'prefer-template': 'error',
+    '@typescript-eslint/no-duplicate-imports': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unused-expressions': 'off',
 };
@@ -138,7 +139,7 @@ const tsRules = {
 };
 
 /** Separate config for .js files which is applied internally */
-const plainJsConfig = tseslint.configs.disableTypeChecked
+const plainJsConfig = tseslint.configs.disableTypeChecked;
 plainJsConfig.rules['@typescript-eslint/no-require-imports'] = 'off';
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
