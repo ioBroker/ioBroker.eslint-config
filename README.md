@@ -53,7 +53,13 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+-   (@GermanBluefox) Added `no-duplicate-imports` rule
+
 ### 0.1.7 (2024-11-13)
+
 -   (@foxriver76) Allow `require` imports for `.js` files
 
 ### 0.1.6 (2024-09-16)
