@@ -29,7 +29,7 @@ The steps are valid for classic javascript and typescritp repositories. If you a
       .prettierignore
       .prettierrc.js
       
-- [ ] create new configuration file 'eslint.config.mjs' for eslint
+- [ ] create new configuration file 'eslint.config.mjs' for eslint in the root directory of the repository
 
       //  
       // ioBroker eslint template configuration file for js and ts files
@@ -65,7 +65,7 @@ The steps are valid for classic javascript and typescritp repositories. If you a
           
       ];
   
-- [ ] create new configuration file 'prettier.config.mjs' for prettier
+- [ ] create new configuration file 'prettier.config.mjs' for prettier in the root directory of the repository
 
       //  
       // iobroker prettier configuration file
@@ -80,9 +80,9 @@ The steps are valid for classic javascript and typescritp repositories. If you a
           //singleQuote: false,
       }
   
-- [ ] check and eventually adapt script definition at pacakge.json
+- [ ] check and eventually adapt script definition at package.json
    
-  Your 'lint' script definitioon at io-package.json should read like this
+  Your 'lint' script definition at package.json should read like this
 
       {
           "scripts": {
@@ -92,7 +92,7 @@ The steps are valid for classic javascript and typescritp repositories. If you a
 
 - [ ] update .npmignore (if still in use)
 
-  If you still use .npmignore and die not yet switch to use `files` section within opackage.json, add the follwoing files to `.npmignore`
+  If you still use .npmignore and not yet switched to use files section within package.json, add the following files to .npmignore
 
       eslint.config.mjs
       prettier.config.mjs
