@@ -67,7 +67,7 @@ The steps are valid for classic javascript and typescritp repositories. If you a
           
       ];
   
-- [ ] create new configuration file 'eslint.config.mjs' for prettier
+- [ ] create new configuration file 'prettier.config.mjs' for prettier
 
       //  
       // iobroker prettier configuration file
