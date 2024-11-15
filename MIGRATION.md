@@ -12,13 +12,11 @@ The steps are valid for classic javascript and typescritp repositories. If you a
       
 - [ ] remove packages no longer needed
 
+      npm uninstall eslint
       npm uninstall eslint-config-prettier
       npm uninstall eslint-plugin-prettier
       npm uninstall prettier
 
-- [ ] update eslint to current version
-
-      npm i eslint@latest --save-dev
 
 - [ ] install iobroker standard rules
 
