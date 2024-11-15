@@ -140,6 +140,15 @@ const tsRules = {
 /** Separate config for .js files which is applied internally */
 const plainJsConfig = tseslint.configs.disableTypeChecked
 plainJsConfig.rules['@typescript-eslint/no-require-imports'] = 'off';
+plainJsConfig.rules['@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+            ignoreRestSiblings: true,
+            argsIgnorePattern: '^_',
+            caughtErrors: 'all',
+        },
+    ],
+];
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
 export default tseslint.config(
