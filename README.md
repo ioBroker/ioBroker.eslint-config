@@ -55,9 +55,12 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 -->
 
 ### **WORK IN PROGRESS**
+
+-   (@GermanBluefox) Added `no-duplicate-imports` rule
 -   (@mcm1957/@foxriver76) allow unused args with `_` prefix in JavaScript too
 
 ### 0.1.7 (2024-11-13)
+
 -   (@foxriver76) Allow `require` imports for `.js` files
 
 ### 0.1.6 (2024-09-16)
