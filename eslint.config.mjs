@@ -44,7 +44,7 @@ const generalRules = {
     // https://eslint.org/docs/latest/rules/prefer-template
     // Enforce the use of template literals instead of string concatenation: "Hello, " + name + "!" => `Hello, ${name}!`
     'prefer-template': 'error',
-    '@/no-duplicate-imports': 'error',
+    'no-duplicate-imports': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unused-expressions': 'off',
 };
