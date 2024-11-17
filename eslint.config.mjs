@@ -48,8 +48,21 @@ const generalRules = {
     '@typescript-eslint/no-unused-expressions': 'off',
 };
 
+/** Rules for js and ts files */
+const jsAndTsRules = {
+    '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+            ignoreRestSiblings: true,
+            argsIgnorePattern: '^_',
+            caughtErrors: 'all',
+        },
+    ],
+}
+
 /** General TypeScript rules */
 const tsRules = {
+    ...jsAndTsRules,
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/unbound-method': 'off',
@@ -59,14 +72,6 @@ const tsRules = {
             functions: false,
             typedefs: false,
             classes: false,
-        },
-    ],
-    '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-            ignoreRestSiblings: true,
-            argsIgnorePattern: '^_',
-            caughtErrors: 'all',
         },
     ],
     '@typescript-eslint/no-object-literal-type-assertion': 'off',
@@ -138,8 +143,14 @@ const tsRules = {
 };
 
 /** Separate config for .js files which is applied internally */
-const plainJsConfig = tseslint.configs.disableTypeChecked
-plainJsConfig.rules['@typescript-eslint/no-require-imports'] = 'off';
+const plainJsConfig = {
+    ...tseslint.configs.disableTypeChecked,
+    rules: {
+        ...tseslint.configs.disableTypeChecked.rules,
+        ...jsAndTsRules,
+        '@typescript-eslint/no-require-imports': 'off',
+    }
+}
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
 export default tseslint.config(
