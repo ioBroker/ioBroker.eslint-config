@@ -47,10 +47,6 @@ const generalRules = {
     'no-duplicate-imports': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unused-expressions': 'off',
-};
-
-/** Rules for js and ts files */
-const jsAndTsRules = {
     '@typescript-eslint/no-unused-vars': [
         'error',
         {
@@ -59,11 +55,10 @@ const jsAndTsRules = {
             caughtErrors: 'all',
         },
     ],
-}
+};
 
 /** General TypeScript rules */
 const tsRules = {
-    ...jsAndTsRules,
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/unbound-method': 'off',
@@ -148,7 +143,6 @@ const plainJsConfig = {
     ...tseslint.configs.disableTypeChecked,
     rules: {
         ...tseslint.configs.disableTypeChecked.rules,
-        ...jsAndTsRules,
         '@typescript-eslint/no-require-imports': 'off',
     }
 }
