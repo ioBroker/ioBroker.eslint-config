@@ -144,7 +144,7 @@ const tsRules = {
 
 /** Separate config for .js files which is applied internally */
 const plainJsConfig = {
-    ...tseslint.configs.disableTypeChecked ,
+    ...tseslint.configs.disableTypeChecked,
     rules: {
         ...tseslint.configs.disableTypeChecked.rules,
         ...jsAndTsRules,
