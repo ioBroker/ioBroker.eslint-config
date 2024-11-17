@@ -1,4 +1,4 @@
-# Eslint config for ioBroker projects
+# ESLint config for ioBroker projects
 
 ## Installation
 
