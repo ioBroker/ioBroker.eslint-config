@@ -1,4 +1,4 @@
-# Eslint config for ioBroker projects
+# ESLint config for ioBroker projects
 
 ## Installation
 
@@ -54,6 +54,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   ### **WORK IN PROGRESS**
 -->
 ### 0.1.7 (2024-11-13)
+
 -   (@foxriver76) Allow `require` imports for `.js` files
 
 ### 0.1.6 (2024-09-16)

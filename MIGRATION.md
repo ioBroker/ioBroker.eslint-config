@@ -1,12 +1,12 @@
-# Eslint Migrations Guide
+# ESLint Migrations Guide
 
-## Migration from eslint 8.x.x to 9.x.x
+## Migration from ESLint 8.x.x to 9.x.x
 
-The following steps are recommended when migrating from an existing eslint 8.x.x configuration using .eslint.rc configuration file to an eslint 9.x.x setup using `@iobroker/eslint-config`.
-The steps are valid for classic javascript and typescritp repositories. If you are using esm modules or react the eslint configuration needs to include some more modules. Please see README.md for details.
+The following steps are recommended when migrating from an existing ESLint 8.x.x configuration using `.eslint.rc` configuration file to an ESLint 9.x.x setup using `@iobroker/eslint-config`.
+The steps are valid for vanilla Javascript and TypeScript repositories. If you are using ESM modules or React the ESLint configuration needs to include some more modules. Please see `README.md` for details.
 
 - [ ] Clone your repository to a local workspace
-- [ ] Verify that current (old) eslint configuration is working
+- [ ] Verify that current (old) ESLint configuration is working
 
   Execute `npm run lint` and check for errors. Consider fixing all existing errors before starting the migration.
       
@@ -29,70 +29,66 @@ The steps are valid for classic javascript and typescritp repositories. If you a
       .prettierignore
       .prettierrc.js
       
-- [ ] create new configuration file 'eslint.config.mjs' for eslint in the root directory of the repository
-
-      //  
-      // ioBroker eslint template configuration file for js and ts files
-      // Please note that esm or react based modules need additional modules loaded.
-      //  
-      
-      import config from '@iobroker/eslint-config';
-    
-      export default [
-          ...config,
-      
-          {
-              // specify files to exclude from linting here
-              ignores: [
-                  '*.test.js', 
-                  'test/**/*.js', 
-                  '*.config.mjs', 
-                  'build', 
-                  'admin/build', 
-                  'admin/words.js',
-                  'admin/admin.d.ts',
-                  '**/adapter-config.d.ts'     
-              ] 
-          },
-      
-          {
-              // you may disable some 'jsdoc' warnings - but using jsdoc is highly recommended
-              // as this improves maintainability. jsdoc warnings will not block buiuld process.
-              rules: {
-                  // 'jsdoc/require-jsdoc': 'off',
-              },
-          },
-          
-      ];
+- [ ] create new configuration file `eslint.config.mjs` for ESLint in the root directory of the repository
+  ```js
+  // ioBroker eslint template configuration file for js and ts files
+  // Please note that esm or react based modules need additional modules loaded.
+  import config from '@iobroker/eslint-config';
   
-- [ ] create new configuration file 'prettier.config.mjs' for prettier in the root directory of the repository
-
-      //  
-      // iobroker prettier configuration file
-      //  
+  export default [
+      ...config,
+  
+      {
+          // specify files to exclude from linting here
+          ignores: [
+              '*.test.js', 
+              'test/**/*.js', 
+              '*.config.mjs', 
+              'build', 
+              'admin/build', 
+              'admin/words.js',
+              'admin/admin.d.ts',
+              '**/adapter-config.d.ts'     
+          ] 
+      },
+  
+      {
+          // you may disable some 'jsdoc' warnings - but using jsdoc is highly recommended
+          // as this improves maintainability. jsdoc warnings will not block buiuld process.
+          rules: {
+              // 'jsdoc/require-jsdoc': 'off',
+          },
+      },
       
-      import prettierConfig from '@iobroker/eslint-config/prettier.config.mjs';
-      
-      export default {
-          ...prettierConfig,
-      
-          // uncomment next line if you prefer double quotes
-          //singleQuote: false,
-      }
+  ];
+   ```
+  
+- [ ] create new configuration file 'prettier.config.mjs' for Prettier in the root directory of the repository
+  ```js
+  // iobroker prettier configuration file
+  import prettierConfig from '@iobroker/eslint-config/prettier.config.mjs';
+  
+  export default {
+      ...prettierConfig,
+      // uncomment next line if you prefer double quotes
+      // singleQuote: false,
+  }
+  ```
   
 - [ ] check and eventually adapt script definition at package.json
    
   Your 'lint' script definition at package.json should read like this
-
-      {
-          "scripts": {
-              "lint": "eslint -c eslint.config.mjs ."
-          }
+  ```json
+  {
+      "scripts": {
+          "lint": "eslint -c eslint.config.mjs ."
       }
+  }
+  ```
 
 - [ ] update .npmignore (if still in use)
 
-  If you still use .npmignore and not yet switched to use files section within package.json, add the following files to .npmignore
+  If you still use .npmignore and not yet switched to use files section within package.json, add the following files to `.npmignore`
 
       eslint.config.mjs
       prettier.config.mjs
@@ -101,7 +97,7 @@ The steps are valid for classic javascript and typescritp repositories. If you a
    
       npm run lint
 
-  Please note that the execution of eslint 9 checks will last longer than previous executions. You might get errors and warnings due to new rules.
+  Please note that the execution of ESLint 9 checks will last longer than previous executions. You might get errors and warnings due to new rules.
   Feel free to try `npm run lint -- --fix` to perform automatic fixes.
 
 
