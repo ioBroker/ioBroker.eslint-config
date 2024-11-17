@@ -53,6 +53,10 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+-   (@mcm1957/@foxriver76) allow unused args with `_` prefix in JavaScript too
+
 ### 0.1.7 (2024-11-13)
 -   (@foxriver76) Allow `require` imports for `.js` files
 
