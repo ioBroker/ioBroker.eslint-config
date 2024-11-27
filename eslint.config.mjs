@@ -193,6 +193,13 @@ export const esmConfig = [
  */
 export const reactConfig = [
     {
+        ignores: [
+            '.dev-server',
+            '.vscode',
+            'build', 
+            'admin/build', 
+            'admin/words.js'
+        ] ,
         plugins: {
             react: reactPlugin,
             'react-hooks': reactHooksPlugin,
