@@ -41,6 +41,8 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
       {
           // specify files to exclude from linting here
           ignores: [
+              '.dev-server/',
+              '.vscode/',
               '*.test.js', 
               'test/**/*.js', 
               '*.config.mjs', 
