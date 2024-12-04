@@ -136,6 +136,9 @@ const tsRules = {
     '@typescript-eslint/no-unsafe-declaration-merging': 'off',
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/consistent-type-exports': 'error',
+    'require-await': 'off',
+    '@typescript-eslint/require-await': 'error',
+
 };
 
 /** Separate config for .js files which is applied internally */
