@@ -25,7 +25,7 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
       
       npm uninstall eslint-plugin-security
 
-  Please note that any additional packages you want to install must be verified to work with eslint 9 and must be added to your configuration file manually .
+  Please note that any additional packages you want to install must be verified to work with ESLint 9 and must be added to your configuration file manually .
 
 - [ ] install iobroker standard rules
 
