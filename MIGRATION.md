@@ -15,6 +15,7 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
       npm uninstall eslint
       npm uninstall eslint-config-prettier
       npm uninstall eslint-plugin-prettier
+      npm uninstall eslint-plugin-security
       npm uninstall prettier
 
 
