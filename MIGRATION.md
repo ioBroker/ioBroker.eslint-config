@@ -15,9 +15,17 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
       npm uninstall eslint
       npm uninstall eslint-config-prettier
       npm uninstall eslint-plugin-prettier
-      npm uninstall eslint-plugin-security
       npm uninstall prettier
 
+- [ ] remove all other eslint / prettier packages you do not plan to add to you personal configuration later
+
+  You should remove all `eslint-*` and `prettier.*` packages except those you want to add to the adapterspecific configuration file later. The standard configuration `@iobroker/eslint-config` does not require any additional packages installed at repository level. So in most cases you can safely remove all `eslint-*` and `prettier-*` packages.  
+
+  To remove i.e. `eslint-plugin-security` issue this command:
+      
+      npm uninstall eslint-plugin-security
+
+  Please note that any additional packages you want to install must be verified to work with eslint 9 and must be added to your configuration file manually .
 
 - [ ] install iobroker standard rules
 
@@ -66,7 +74,7 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
   ];
    ```
   
-- [ ] create new configuration file 'prettier.config.mjs' for Prettier in the root directory of the repository
+- [ ] create new configuration file `prettier.config.mjs` for Prettier in the root directory of the repository
   ```js
   // iobroker prettier configuration file
   import prettierConfig from '@iobroker/eslint-config/prettier.config.mjs';
